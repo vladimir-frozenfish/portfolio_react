@@ -1,7 +1,8 @@
+import type { ProjectDataType } from '../../types/projectListTypes';
 import styles from './ProjectList.module.css'
 
 interface ProjectListProps {
-  projectData: { img: string; category: string; }[];
+  projectData: ProjectDataType[];
 }
 
 export default function ProjectList({ projectData }: ProjectListProps) {

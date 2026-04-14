@@ -1,4 +1,6 @@
-export let categories = [
+import type { ProjectDataType } from "../types/projectListTypes";
+
+export const categories = [
   'All',
   'Business Cards',
   'Websites',
@@ -6,7 +8,7 @@ export let categories = [
 ]
 
 
-export let projectData: { img: string; category: string; }[] =   [{
+export const projectData: ProjectDataType[] =   [{
   img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
   category: "Business Cards"
 }, {

@@ -7,6 +7,8 @@ import styles from './Portfolio.module.css'
 export default function Portfolio() {
   const [ selected, setSelected ] = useState('All')
 
+  const projectList = projectData.filter(item => selected === 'All' || item.category === selected)
+
   return (
     <div className={styles.portfolio}>
       <Toolbar 
@@ -14,7 +16,7 @@ export default function Portfolio() {
         selected={selected}
         onSelectFilter={(filter) => setSelected(filter)}
       />
-      <ProjectList projectData={projectData.filter(item => selected === 'All' || item.category === selected)} />
+      <ProjectList projectData={projectList} />
     </div>
   )
 }
