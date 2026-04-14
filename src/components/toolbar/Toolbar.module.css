@@ -1,0 +1,24 @@
+.toolbar {
+  display: flex;
+  column-gap: 10px;
+}
+
+.toolbar_category {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  user-select: none;
+  cursor: pointer;
+}
+
+.toolbar_category:hover {
+  background-color: rgb(255, 220, 174);
+}
+
+.toolbar_category:active {
+  background-color: rgb(255, 197, 122);
+}
+
+.toolbar_category_selected {
+  background-color: rgb(255, 197, 122);
+}

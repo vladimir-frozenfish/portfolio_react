@@ -1,0 +1,12 @@
+.project_list {
+  --column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project_list_img {
+  width: calc((100% - var(--column-gap) * 3) / 4);
+  height: 200px;
+  object-fit: cover;  
+}
