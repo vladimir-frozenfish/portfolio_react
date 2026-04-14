@@ -1,22 +1,30 @@
-import { useState } from 'react'
+import { Component } from 'react'
 import ProjectList from '../projectList/ProjectList'
 import Toolbar from '../toolbar/Toolbar'
 import { projectData, categories } from "../../data/projectData"
 import styles from './Portfolio.module.css'
 
-export default function Portfolio() {
-  const [ selected, setSelected ] = useState('All')
+export default class Portfolio extends Component {
+  state = {
+    selected: 'All',
+  }
 
-  const projectList = projectData.filter(item => selected === 'All' || item.category === selected)
+  handleSelectFilter = (filter: string) => {this.setState({ selected: filter })}
 
-  return (
-    <div className={styles.portfolio}>
-      <Toolbar 
-        categories={categories} 
-        selected={selected}
-        onSelectFilter={(filter) => setSelected(filter)}
-      />
-      <ProjectList projectData={projectList} />
-    </div>
-  )
+  render() {
+    const { selected } = this.state
+
+    const projectList = projectData.filter(item => selected === 'All' || item.category === selected)
+
+    return (
+      <div className={styles.portfolio}>
+        <Toolbar
+          categories={categories}
+          selected={selected}
+          onSelectFilter={this.handleSelectFilter}
+        />
+        <ProjectList projectData={projectList} />
+      </div>
+    )
+  }
 }
